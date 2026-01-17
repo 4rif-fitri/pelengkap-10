@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: yellow;
+        font-family: fantasy;
+      }
+      main {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .container {
+        background-color: lightgoldenrodyellow;
+        height: 7rem;
+        width: 70vw;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+      }
+      .box {
+        background-color: lightblue;
+        /* border: 1px solid black; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .txt {
+        font-size: 7rem;
+		  position: relative;
+      }
+      .jwp {
+        background-color: lightgoldenrodyellow;
+        border: .3rem dashed black;
+      }
+
+		.hide{
+			display: none;
+		}
+
+		.bulat-container{
+			position: absolute;
+			z-index: 99;
+		}
+
+      .bulat {
+        height: 15rem;
+        width: 15rem;
+        background-color: lightgoldenrodyellow;
+        /* border-radius: 50%; */
+        border: 5px solid black;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+		  position: relative;
+      }
+
+      .button {
+        font-size: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: lightgoldenrodyellow;
+		  border: 2px solid black;
+      }
+
+		.button:hover{
+			background-color: lightgrey;
+		}
+		.cencel{
+		  border: 2px solid black;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);		
+			background-color: #fff;
+			height: 4rem;
+			width: 4rem;
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		.cencel:hover{
+			background-color: lightcoral
+		}
+
+		.cencel > p {
+			font-size: 2rem;
+		}
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <div class="box">
+          <p class="txt">5</p>
+        </div>
+        <div class="box">
+          <p class="txt">+</p>
+        </div>
+        <div class="box jwp">
+          <p class="txt" id="ss">
+
+				<div class="bulat-container hide">
+					<div class="bulat">
+						<div class="cencel"><p>X</p></div>
+						
+							<button class="button" id="1">
+								<p>1</p>
+							</button>
+							
+							<button class="button" id="2">
+								<p>2</p>
+							</button>
+							
+							<button class="button" id="3">
+								<p>3</p>
+							</button>
+							
+							<button class="button" id="4">
+								<p>4</p>
+							</button>
+						</div>
+					</div>
+
+			 </p>
+        </div>
+        <div class="box">
+          <p class="txt">=</p>
+        </div>
+        <div class="box">
+          <p class="txt">10</p>
+        </div>
+      </div>
+
+		
+    </main>
+
+	 <script>
+		let bulat = document.querySelector(".bulat-container")
+		let jwp = document.querySelector(".jwp")
+		let jwpTxt = document.querySelector("#ss")
+		let pilihan = document.querySelectorAll(".button")
+		let cencel = document.querySelector(".cencel")
+
+
+		jwp.addEventListener("click", e => {
+			bulat.classList.remove("hide")
+		})
+
+		pilihan.forEach(c => {
+			c.addEventListener("click", e => {
+				    e.stopPropagation()
+				jwpTxt.textContent = e.target.textContent
+				bulat.classList.add("hide")
+			})
+		});
+
+		cencel.addEventListener("click", e => {
+			    e.stopPropagation()
+				bulat.classList.add("hide")
+		})
+
+	 </script>
+
+  </body>
+</html>
