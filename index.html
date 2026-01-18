@@ -1,106 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <div class="pop hide">
-      <div class="popContainer">
-        <div class="atas">
-          <p>Salah</p>
-        </div>
-        <div class="bawah"><button>Cuba Lagi</button></div>
-      </div>
-    </div>
-    <main>
-      <div class="container">
-        <div class="box">
-          <p class="txt">5</p>
-        </div>
-        <div class="box">
-          <p class="txt">+</p>
-        </div>
-        <div class="box jwp">
-          <p class="txt" id="ss">
-
-				<div class="bulat-container hide">
-					<div class="bulat">
-						<div class="cencel"><p>X</p></div>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<main>
+		<div class="header">
+			<h1>Pilih Numbur Untuk Dapatkan 10 </h1>
+		</div>
+		<div class="popBack hide">
+			<div class="popContainer">
+				<div class="popContent border">
+					<div class="popTxt">
+						<p>Salah</p>
+					</div>
+					<div class="popBtn">
+						<button class="popBtnTxt">Cuba Lagi</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="soalanContainer">
+			<div class="soalanContent border">
+				<div class="box">
+					<p class="boxTxt" id="num1">5</p>
+				</div>
+				<div class="box">
+					<p class="boxTxt">+</p>
+				</div>
+				<div class="box jwp">
+					<p class="boxTxt boxJwp"></p>
+					<div class="pilihanContainer hide">
+						<div class="pilihanContent">
+							<div class="pilihan"><p class="pilihanTxt">5</p></div>
+							<div class="pilihan"><p class="pilihanTxt">6</p></div>
+							<div class="pilihan"><p class="pilihanTxt">7</p></div>
+							<div class="pilihan"><p class="pilihanTxt">8</p></div>
+							
+							<div class="cencelBtn">
+								<p>X</p>
+							</div>
 						
-							<button class="button" id="1">
-								<p>1</p>
-							</button>
-							
-							<button class="button" id="2">
-								<p>2</p>
-							</button>
-							
-							<button class="button" id="3">
-								<p>3</p>
-							</button>
-							
-							<button class="button" id="4">
-								<p>4</p>
-							</button>
 						</div>
 					</div>
-
-			 </p>
-        </div>
-        <div class="box">
-          <p class="txt">=</p>
-        </div>
-        <div class="box">
-          <p class="txt">10</p>
-        </div>
-      </div>
-      <button class="semak">
-        SEMAK
-      </button>
-		
-    </main>
-
-	 <script>
-		let bulat = document.querySelector(".bulat-container")
-		let jwp = document.querySelector(".jwp")
-		let jwpTxt = document.querySelector("#ss")
-		let pilihan = document.querySelectorAll(".button")
-		let cencel = document.querySelector(".cencel")
-
-    let num1,num2,num3 = 10;
-
-    document.addEventListener("DOMContentLoaded", function(){
-      
-    })
-
-		jwp.addEventListener("click", e => {
-				    e.stopPropagation()
-
-			bulat.classList.remove("hide")
-		})
-
-		pilihan.forEach(c => {
-			c.addEventListener("click", e => {
-				    e.stopPropagation()
-				jwpTxt.textContent = e.target.textContent
-				bulat.classList.add("hide")
-			})
-		});
-
-		cencel.addEventListener("click", e => {
-			    e.stopPropagation()
-				bulat.classList.add("hide")
-		})
-
-    document.addEventListener("click", e => {
-			    e.stopPropagation()
-        bulat.classList.add("hide")
-    })
-
-	 </script>
-
-  </body>
+				</div>
+				<div class="box">
+					<p class="boxTxt">=</p>
+				</div>
+				<div class="box">
+					<p class="boxTxt" id="num3">10</p>
+				</div>
+			</div>
+			<div class="buttonCheck hide">
+				<button><p>Semak</p></button>
+			</div>
+		</div>
+		<div class="footer">
+			<h1>Tekan Petak Kuning Untuk Pilih Number</h1>
+		</div>
+	</main>
+	<script src="app.js"></script>
+</body>
 </html>
