@@ -166,6 +166,27 @@ main{
 	bottom: 10%;
 	padding: 0.5rem;
 }
+.barAtas{
+	border-top: 0.3rem solid black !important;
+}
+
+.soalan2Container{
+	background-color: khaki;
+	height: 40rem;
+	width: 40rem;
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-template-rows: repeat(4, 1fr);
+}
+.soalan2Container > .box{
+	background-color: lightslategrey;
+	height: 100%;
+	width: 100%;
+	border:   0.01rem solid rgba(0, 0, 0, 0.1);
+}
+.higlight{
+	background-color: yellow !important;
+}
 @media screen and (max-width: 500px) {
 	main{
 		background-color: lemonchiffon;
@@ -185,4 +206,12 @@ main{
 		width: 10rem;
 		height: 10rem;
 	}
+
+	.soalan2Container{
+		height: 50vh;
+		width: 100vw;
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-template-rows: repeat(4, 1fr);
+}
 }
